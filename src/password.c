@@ -107,8 +107,8 @@ PG_FUNCTION_INFO_V1(password_equal);
 Datum
 password_equal(PG_FUNCTION_ARGS)
 {
-	Datum	stored_hash	     = PG_GETARG_TEXT_P(0);
-	Datum	entered_password = PG_GETARG_TEXT_P(1);
+	Datum	stored_hash	     = TextDatumGetCString(PG_GETARG_DATUM(0));
+	Datum	entered_password = TextDatumGetCString(PG_GETARG_DATUM(1));
 
 	int ret;
 	char new_hash[BCRYPT_HASHSIZE];
