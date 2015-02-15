@@ -1,29 +1,29 @@
 BEGIN
 Timing is on.
 CREATE EXTENSION
-Time: 3.100 ms
+Time: 3.083 ms
 CREATE EXTENSION
-Time: 3.384 ms
+Time: 3.319 ms
 CREATE TABLE
-Time: 2.433 ms
+Time: 2.127 ms
 INSERT 0 3
-Time: 477.648 ms
+Time: 479.299 ms
 INSERT 0 2
-Time: 472.208 ms
+Time: 472.811 ms
 INSERT 0 2
-Time: 236.587 ms
+Time: 237.248 ms
  username | clear_text | pgcrypt_compatible | password_equal | expected_fail |                          encrypted                           
 ----------+------------+--------------------+----------------+---------------+--------------------------------------------------------------
- user1    | secret1    | t                  | f              | f             | $2a$12$gejGaV.hTPm4Y2Sart1uFuI5sF4MFXWuqqs/nZkkZ4A/dG/r5Yq1u
- user2    | secret1    | t                  | f              | f             | $2a$12$h6CmLniXUjr1pa37k.WTXOGdJNKeSGhqsi/rldmTNiIGeHPh0smtO
- user3    | secret2    | t                  | f              | f             | $2a$06$yC/kIxJpWy8d3g6j5VzFB./FGEIxuARcmU9Y9kqEL4W4iTqfMuVVm
- user4    | password   | t                  | f              | f             | $2a$12$YzC2o5aP/.QIymVBzvX7Uetibbx0HhklWzBmj2qJ6sBLC1reOVb6e
- user5    | password   | t                  | f              | f             | $2a$12$504B87PVaikZyJCdAOE/kuEUVC3T6l.RoWu86tFRstjMdkLVZVlhu
- user6    | password   | t                  | f              | f             | $2a$12$ng.tTGeCGcyORjKmwb2KLur/NoH4WC/uWVp41b3cpFoV.vOHaOD8.
- user7    | password   | t                  | f              | f             | $2a$12$ng.tTGeCGcyORjKmwb2KLur/NoH4WC/uWVp41b3cpFoV.vOHaOD8.
+ user1    | secret1    | t                  | t              | f             | $2a$12$UWQq6.nifud2TCGoSBh4oe/C/jDuQsPAE3lso1kLI9Uoy8Qgq2.6.
+ user2    | secret1    | t                  | t              | f             | $2a$12$p3VxQdc/YH.XqTDw2.X7n.xTVpswSyJL69GE4K9zWtTee4f1V.n.K
+ user3    | secret2    | t                  | t              | f             | $2a$06$SzS1bfM/MXvaHQqL4avcueKg86gs8Ufe5q9E5fCfYUz7AXDnVCD2O
+ user4    | password   | t                  | t              | f             | $2a$12$nBq8v6yvKe6lqFmNAxwMfe8dU7pS0kXx35kSTM9/bbxxZMHA.otEa
+ user5    | password   | t                  | t              | f             | $2a$12$5lclLl8MIkfERK3QLa21me6FbmsgcO8N9BCgOqUVYgVajte3khrSa
+ user6    | password   | t                  | t              | f             | $2a$12$8rFiPUvIGcJ5lBUyn2PJ5uwKFzqsmXWjLDbDgG2sBolmFrp6FXIMS
+ user7    | password   | t                  | t              | f             | $2a$12$8rFiPUvIGcJ5lBUyn2PJ5uwKFzqsmXWjLDbDgG2sBolmFrp6FXIMS
 (7 rows)
 
-Time: 1652.958 ms
+Time: 3085.346 ms
                                  List of casts
     Source type    | Target type |      Function      | Implicit? | Description 
 -------------------+-------------+--------------------+-----------+-------------
@@ -33,4 +33,4 @@ Time: 1652.958 ms
 (3 rows)
 
 ROLLBACK
-Time: 1.529 ms
+Time: 1.794 ms
