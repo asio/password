@@ -1,0 +1,43 @@
+{
+ "name": "password",
+ "abstract": "Password data type for Postgresql ",
+ "version": "0.1.0",
+ "maintainer": "Marcel Asio <marcel@asio.se>",
+ "license": "postgresql",
+ "release_status": "unstable",
+ "provides": {
+    "password": {
+       "abstract": "Password data type for Postgresql",
+       "file": "password--0.0.1.sql",
+       "docfile": "README",
+       "version": "0.0.1"
+    }
+ },
+ "prereqs": {
+    "runtime": {
+       "requires": {
+          "PostgreSQL": "9.1.0"
+       }
+    }
+ },
+ "resources": {
+    "homepage": "http://www.asio.se/password",
+    "bugtracker": {
+       "web": "https://www.github.com/asio/password"
+    },
+    "repository": {
+      "url":  "https://www.github.com/asio/password.git",
+      "web":  "https://www.github.com/asio/password",
+      "type": "git"
+    }
+ },
+ "meta-spec": {
+    "version": "0.0.1",
+    "url": "http://pgxn.org/meta/spec.txt"
+ },
+ "tags": [
+    "password",
+    "blowfish",
+    "data type"
+ ]
+}

@@ -1,0 +1,36 @@
+======================================
+
+This PostgreSQL extension implements a password data type.
+
+Building
+--------
+
+make
+sudo make install
+
+Install
+-------
+
+CREATE EXTENSION password;
+
+operators
+--------
+=  Check that encrypted password is equal to clear text password
+
+Example
+-------
+
+CREATE EXTENSION password;
+
+CREATE TABLE users (
+    username text not null,
+    password password not null
+);
+
+INSERT INTO users (username, password) VALUES ('someuser', 'somesecret');
+
+SELECT * FROM users;
+ username |                           password                           
+----------+--------------------------------------------------------------
+ someuser | $2a$12$6hhS1QSTkBF7iOEgQXM2Tec/fkhmzpYHRpus91m.1y3/aFiW8aS8e
+(1 row)
