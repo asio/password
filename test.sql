@@ -5,7 +5,7 @@ BEGIN;
 CREATE EXTENSION password;
 CREATE EXTENSION pgcrypto; -- used to test compatibility betwen password extension <-> pgcrypto
 
-CREATE TABLE users (username text, clear_text text, encrypted password);
+CREATE TABLE users (username text, clear_text text, encrypted password('bf', 14));
 INSERT INTO users (username, clear_text, encrypted) VALUES
     ('user1', 'secret1', 'secret1'),
     ('user2', 'secret1', 'secret1'),
@@ -25,7 +25,7 @@ INSERT INTO users (username, clear_text, encrypted)
     SELECT
         'user' || g,
         'password',
-        'password'
+        'password'::text::password -- even though in function is specified to volatile it is stable
     FROM generate_series(6, 7) g;
 
 select
@@ -38,4 +38,5 @@ select
 from users;
 
 \dC+ *password*
+\d+ users
 ROLLBACK;

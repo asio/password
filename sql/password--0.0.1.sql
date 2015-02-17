@@ -1,11 +1,21 @@
 CREATE TYPE password;
 
-CREATE FUNCTION password_in(cstring)
+CREATE FUNCTION password_in(cstring, oid, integer)
 RETURNS password
 AS 'MODULE_PATHNAME'
 LANGUAGE C VOLATILE STRICT;
 
 CREATE FUNCTION password_out(password)
+RETURNS cstring
+AS 'MODULE_PATHNAME'
+LANGUAGE C IMMUTABLE STRICT;
+
+CREATE FUNCTION password_typmod_in(cstring[])
+RETURNS integer
+AS 'MODULE_PATHNAME'
+LANGUAGE C IMMUTABLE STRICT;
+
+CREATE FUNCTION password_typmod_out(integer)
 RETURNS cstring
 AS 'MODULE_PATHNAME'
 LANGUAGE C IMMUTABLE STRICT;
@@ -26,8 +36,10 @@ AS 'MODULE_PATHNAME'
 LANGUAGE C IMMUTABLE STRICT;
 
 CREATE TYPE password (
-    INPUT          = password_in,
-    OUTPUT         = password_out
+    INPUT      = password_in,
+    OUTPUT     = password_out,
+    TYPMOD_IN  = password_typmod_in,
+    TYPMOD_OUT = password_typmod_out
 );
 
 CREATE OPERATOR = (
